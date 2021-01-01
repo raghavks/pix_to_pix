@@ -1,0 +1,15 @@
+train:
+
+python train.py --dataroot ./datasets/axiv_aug_1536/ --name aziv_aug_1536_pix2pix --model pix2pix --direction AtoB --batch_size 1 --netG unet_1536 --save_epoch_freq 15  --crop_size 1536 --preprocess crop --print_freq 2924  --input_nc 1 --output_nc 1 --no_flip --load_size 1536 --continue_train --epoch_count 107
+
+
+
+
+python train.py --dataroot ./datasets/merged_data/ --name constantt_font_model --model pix2pix --direction AtoB --batch_size 4 --netG unet_320 --save_epoch_freq 15  --crop_size 320 --preprocess crop --print_freq 500  --input_nc 1 --output_nc 1 --no_flip --load_size 320
+
+
+
+
+Test:
+
+python test.py --dataroot ./datasets/axiv_aug_1536/test/ --direction AtoB --model pix2pix --name aziv_aug_1536_pix2pix --crop_size 1536 --preprocess crop --input_nc 1 --output_nc 1 --no_flip --load_size 1536 --netG unet_1536 
